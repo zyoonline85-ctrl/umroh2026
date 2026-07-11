@@ -204,6 +204,30 @@ document.addEventListener('DOMContentLoaded', () => {
     }).format(amount).replace('IDR', 'Rp');
   }
 
+  let currentAnimatedPrice = 77000000; // Initial default for VIP, 2 pax
+
+  function animatePriceChange(targetValue) {
+    if (!calcTotalDisplay) return;
+    const startValue = currentAnimatedPrice;
+    const duration = 450; // ms
+    let startTimestamp = null;
+
+    const step = (timestamp) => {
+      if (!startTimestamp) startTimestamp = timestamp;
+      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+      // easeOutQuad curve
+      const easeProgress = progress * (2 - progress);
+      const val = Math.floor(easeProgress * (targetValue - startValue) + startValue);
+      calcTotalDisplay.textContent = formatCurrency(val);
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      } else {
+        currentAnimatedPrice = targetValue;
+      }
+    };
+    window.requestAnimationFrame(step);
+  }
+
   function calculatePrice() {
     if (!calcSelectPkg || !calcInputPax || !calcTotalDisplay || !calcPaxDisplay || !calcPerksList) return;
 
@@ -212,8 +236,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const pricePerPax = packagePriceMap[selectedPkg] || 38500000;
     const total = pricePerPax * paxCount;
 
-    // Safe updates using textContent
-    calcTotalDisplay.textContent = formatCurrency(total);
+    // Update range input label
+    const paxValEl = document.getElementById('calc-pax-val');
+    if (paxValEl) paxValEl.textContent = `${paxCount} Orang`;
+
+    // Trigger roll-up count animation
+    animatePriceChange(total);
     calcPaxDisplay.textContent = `Untuk ${paxCount} Orang Jamaah`;
 
     // Safe dynamic DOM insertion for perks without innerHTML
@@ -385,4 +413,53 @@ document.addEventListener('DOMContentLoaded', () => {
       updateMiniSlideshow();
     }, 6000);
   }
+
+  // --- 9. Interactive FAQ Accordion ---
+  const faqQuestions = document.querySelectorAll('.faq-question');
+  
+  if (faqQuestions.length > 0) {
+    faqQuestions.forEach(q => {
+      q.addEventListener('click', () => {
+        const isOpen = q.getAttribute('aria-expanded') === 'true';
+        
+        // Collapse all other questions for a neat accordion effect
+        faqQuestions.forEach(other => {
+          other.setAttribute('aria-expanded', 'false');
+          const answer = other.nextElementSibling;
+          if (answer) answer.style.maxHeight = null;
+        });
+
+        // Toggle selected question
+        if (!isOpen) {
+          q.setAttribute('aria-expanded', 'true');
+          const answer = q.nextElementSibling;
+          if (answer) {
+            answer.style.maxHeight = answer.scrollHeight + "px";
+          }
+        }
+      });
+    });
+  }
+
+  // --- 10. Scroll-Reveal Animation Observer ---
+  const revealElements = document.querySelectorAll('.reveal-on-scroll');
+  
+  if (revealElements.length > 0) {
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          revealObserver.unobserve(entry.target); // Trigger only once
+        }
+      });
+    }, {
+      threshold: 0.08,
+      rootMargin: "0px 0px -50px 0px" // Start animating slightly before entering view
+    });
+
+    revealElements.forEach(el => {
+      revealObserver.observe(el);
+    });
+  }
 });
+

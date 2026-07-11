@@ -64,6 +64,7 @@
             </ul>
           </li>
           <li><a href="#video-testimonial-section" class="nav-link">Galeri & Testimoni</a></li>
+          <li><a href="#faq" class="nav-link">FAQ</a></li>
           <li><a href="#kontak" class="nav-link">Hubungi Kami</a></li>
         </ul>
       </nav>
@@ -91,6 +92,7 @@
         <li><a href="#paket" class="mobile-nav-link">Pilihan Paket</a></li>
         <li><a href="#kalkulator" class="mobile-nav-link">Estimator Biaya</a></li>
         <li><a href="#video-testimonial-section" class="mobile-nav-link">Galeri & Testimoni</a></li>
+        <li><a href="#faq" class="mobile-nav-link">FAQ</a></li>
         <li><a href="#kontak" class="mobile-nav-link">Hubungi Kami</a></li>
         <li class="mobile-cta-item"><a href="#paket" class="btn btn-gold btn-block">Konsultasi Gratis</a></li>
       </ul>
@@ -157,7 +159,7 @@
   </section>
 
   <!-- Section 1.5: Keresahan Jamaah (SPIN Selling - Situation & Problem & Implication Hook) -->
-  <section class="problem-section" id="problem">
+  <section class="problem-section reveal-on-scroll" id="problem">
     <div class="container">
       <div class="section-header">
         <span class="section-tag tag-crimson">Sering Bikin Cemas</span>
@@ -231,7 +233,7 @@
   </section>
 
   <!-- Section 2: Spiritual Philosophy & Copywriting (SPIN - Need-payoff Bridge) -->
-  <section class="spiritual-story-section" id="story">
+  <section class="spiritual-story-section reveal-on-scroll" id="story">
     <div class="container split-layout-grid">
       
       <div class="story-image-box">
@@ -257,7 +259,7 @@
   </section>
 
   <!-- Section 3: Highlight Detail (Hotel & Medina) -->
-  <section class="banner-highlight" id="keunggulan">
+  <section class="banner-highlight reveal-on-scroll" id="keunggulan">
     <div class="container split-layout-grid reverse">
       
       <div class="highlight-info">
@@ -299,7 +301,7 @@
   </section>
 
   <!-- Middle Section: Repeated Packages Grid & WhatsApp CTA Buttons -->
-  <section class="quick-packages-section">
+  <section class="quick-packages-section reveal-on-scroll">
     <div class="container">
       <div class="section-header">
         <span class="section-tag">Pilihan Paket Ringkas</span>
@@ -345,7 +347,7 @@
   </section>
 
   <!-- Section 4: Dual-Column Multimedia (WIPA Tour Style Gallery & Video) -->
-  <section class="video-testimonial-section" id="video-testimonial-section">
+  <section class="video-testimonial-section reveal-on-scroll" id="video-testimonial-section">
     <div class="container dual-multimedia-grid">
       
       <!-- Left Column: Mini-Slideshow Testimonial Gallery -->
@@ -408,7 +410,7 @@
   </section>
 
   <!-- Section 5: Interactive Journey Timeline -->
-  <section class="itinerary-section" id="itinerary">
+  <section class="itinerary-section reveal-on-scroll" id="itinerary">
     <div class="container">
       <div class="section-header">
         <span class="section-tag">Rencana Perjalanan</span>
@@ -486,7 +488,7 @@
   </section>
 
   <!-- Section 6: Pilihan Paket Section (WIPA Tour Style Redesign with Tabs & Comparison Table - End Section) -->
-  <section class="packages-section" id="paket">
+  <section class="packages-section reveal-on-scroll" id="paket">
     <div class="container">
       <div class="section-header">
         <span class="section-tag">Akomodasi Pilihan</span>
@@ -785,7 +787,7 @@
   </section>
 
   <!-- Section 7: Interactive Price Estimator & Calculator Widget -->
-  <section class="calculator-section" id="kalkulator">
+  <section class="calculator-section reveal-on-scroll" id="kalkulator">
     <div class="container">
       
       <div class="calc-card-wrapper">
@@ -816,9 +818,14 @@
               </select>
             </div>
             
+            <!-- Interactive Pax range input slider -->
             <div class="form-group">
-              <label for="calc-input-pax">Jumlah Jamaah (Orang)</label>
-              <input type="number" id="calc-input-pax" value="2" min="1" max="25">
+              <label for="calc-input-pax">Jumlah Jamaah: <strong id="calc-pax-val" class="text-gold">2 Orang</strong></label>
+              <input type="range" id="calc-input-pax" value="2" min="1" max="25" class="pax-range-slider">
+              <div class="range-labels">
+                <span>1 Orang</span>
+                <span>25 Orang</span>
+              </div>
             </div>
 
             <div class="calc-result-box">
@@ -836,7 +843,7 @@
   </section>
 
   <!-- Section 8: Exclusions Accordion -->
-  <section class="conditions-section" id="syarat">
+  <section class="conditions-section reveal-on-scroll" id="syarat">
     <div class="container">
       <div class="conditions-card">
         <div class="conditions-header">
@@ -893,8 +900,69 @@
     </div>
   </section>
 
+  <!-- Section 9: FAQ Accordion (New Rich Interactive Element) -->
+  <section class="faq-section reveal-on-scroll" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Tanya Jawab</span>
+        <h2 class="section-title">Pertanyaan Yang Sering Diajukan</h2>
+        <p class="section-subtitle">Semua informasi penting yang sering ditanyakan oleh calon jamaah kami rangkum di bawah ini.</p>
+      </div>
+      
+      <div class="faq-accordion-wrapper">
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Apakah harga paket sudah termasuk pengurusan visa Umroh?</span>
+            <span class="faq-arrow">▼</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p>Ya, benar sekali. Semua paket perjalanan (VIP, Reguler, maupun Hemat) sudah termasuk biaya pengurusan visa Umroh secara lengkap tanpa ada biaya tersembunyi lainnya.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Bagaimana jika paspor saya belum siap atau belum dibuat?</span>
+            <span class="faq-arrow">▼</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p>Anda tidak perlu khawatir. Tim administrasi Sulthan Haramain siap mendampingi dan memberikan surat rekomendasi resmi untuk mempermudah pengurusan paspor baru Anda di kantor imigrasi terdekat.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Apakah keberangkatan didampingi oleh pembimbing ibadah (Muthowif)?</span>
+            <span class="faq-arrow">▼</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p>Tentu saja. Setiap kelompok terbang (kloter) akan didampingi secara penuh oleh Muthowif profesional yang berpengalaman dalam membimbing jalannya ibadah Umroh sesuai tuntunan Al-Qur'an dan As-Sunnah sejak keberangkatan dari bandara tanah air.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Apakah anak-anak dan lansia bisa mendaftar dan beribadah dengan nyaman?</span>
+            <span class="faq-arrow">▼</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p>Sangat bisa. Kami merekomendasikan Paket VIP atau Reguler bagi jamaah keluarga yang membawa anak-anak atau lansia karena lokasi hotel yang dekat pelataran utama, meminimalisir rasa lelah fisik selama beribadah.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Urgent CTA Banner - End Section -->
-  <section class="cta-urgency-section" id="booking-cta">
+  <section class="cta-urgency-section reveal-on-scroll" id="booking-cta">
     <div class="container">
       <div class="cta-card">
         <span class="urgency-badge">Kuota Terbatas Kloter Ini!</span>
