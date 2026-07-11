@@ -2383,6 +2383,165 @@
   background-color: hsl(34, 15%, 96%);
 }
 
+/* WhatsApp Buttons & Middle CTAs Styling */
+.btn-wa-hero {
+  background: linear-gradient(135deg, #25d366, #128c7e);
+  border: 1px solid var(--gold-color) !important;
+  color: #fff !important;
+}
+
+.btn-wa-hero:hover {
+  background: linear-gradient(135deg, #128c7e, #075e54);
+  transform: translateY(-2px);
+}
+
+.wa-icon-inline {
+  margin-right: 6px;
+  font-size: 1.1rem;
+  vertical-align: middle;
+}
+
+.middle-cta-banner {
+  margin-block: 4rem 2rem;
+  background: linear-gradient(135deg, rgba(7, 36, 21, 0.96), rgba(7, 36, 21, 0.92)), url('/assets/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  border: 1px solid var(--gold-color);
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: 0 15px 35px rgba(7, 36, 21, 0.25);
+  position: relative;
+  overflow: hidden;
+}
+
+.middle-cta-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  z-index: 2;
+  position: relative;
+}
+
+.middle-cta-text {
+  flex: 1 1 500px;
+}
+
+.middle-cta-text h3 {
+  font-family: var(--font-serif);
+  color: #fff;
+  font-size: 1.8rem;
+  margin-block: 0.5rem;
+  line-height: 1.35;
+}
+
+.middle-cta-text p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.middle-cta-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Quick Packages Grid Section (Middle Page) */
+.quick-packages-section {
+  padding-block: 5rem;
+  background-color: hsl(34, 15%, 95%);
+  border-block: 1px solid rgba(7, 36, 21, 0.05);
+}
+
+.quick-packages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  margin-block-start: 3.5rem;
+}
+
+.quick-pkg-card {
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 3rem 2rem 2.5rem;
+  box-shadow: 0 10px 30px rgba(7, 36, 21, 0.03);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.quick-pkg-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px rgba(7, 36, 21, 0.08);
+}
+
+.quick-pkg-card.border-gold {
+  border-top: 5px solid var(--gold-color);
+}
+
+.quick-pkg-card.border-emerald {
+  border-top: 5px solid var(--dark-green-color);
+}
+
+.quick-pkg-badge {
+  position: absolute;
+  top: -14px;
+  padding: 0.35rem 1.2rem;
+  font-size: 0.75rem;
+  font-weight: 800;
+  border-radius: 50px;
+  color: #fff;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.badge-gold {
+  background-color: var(--gold-color);
+}
+
+.badge-emerald {
+  background-color: var(--dark-green-color);
+}
+
+.quick-pkg-card h3 {
+  font-family: var(--font-sans);
+  font-size: 1.35rem;
+  font-weight: 800;
+  margin-block: 1rem 1.5rem;
+  color: var(--dark-green-color);
+}
+
+.quick-pkg-hotel, 
+.quick-pkg-flight, 
+.quick-pkg-duration {
+  font-size: 0.95rem;
+  color: var(--text-dark-color);
+  margin-block-end: 0.85rem;
+}
+
+.quick-pkg-price {
+  font-size: 2rem;
+  font-weight: 850;
+  color: var(--dark-green-color);
+  margin-block: 1.75rem;
+}
+
+.btn-wa-footer {
+  background: linear-gradient(135deg, #25d366, #128c7e);
+  border: 1px solid var(--gold-color) !important;
+  color: #fff !important;
+}
+
+.btn-wa-footer:hover {
+  background: linear-gradient(135deg, #128c7e, #075e54);
+}
+
 /* Responsiveness Media Queries */
 
 @media (min-width: 768px) {
