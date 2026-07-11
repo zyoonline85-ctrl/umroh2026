@@ -2245,6 +2245,144 @@
   color: var(--dark-green-color);
 }
 
+/* SPIN Selling Copywriting Styles */
+.spin-layout-wrapper {
+  margin-block-start: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.spin-intro-box {
+  background-color: #fff;
+  border-left: 4px solid var(--gold-color);
+  padding: 2rem;
+  border-radius: 4px 16px 16px 4px;
+  box-shadow: 0 10px 25px rgba(7, 36, 21, 0.02);
+}
+
+.spin-situation {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--text-dark-color);
+  margin-block-end: 1rem;
+}
+
+.spin-problem {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--text-dark-color);
+  margin: 0;
+}
+
+.spin-implication-box {
+  background-color: hsl(0, 75%, 97%);
+  border: 1px solid hsla(0, 75%, 45%, 0.15);
+  padding: 2rem;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.warning-symbol {
+  font-size: 2.5rem;
+  line-height: 1;
+}
+
+.spin-implication {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: hsl(0, 75%, 25%);
+  margin: 0;
+}
+
+/* Comparison Table Matrix Styles */
+.comparison-view {
+  margin-block-start: 3rem;
+  background-color: #fff;
+  border: 1px solid rgba(7, 36, 21, 0.08);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(7, 36, 21, 0.03);
+  overflow: hidden;
+}
+
+.table-responsive-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.comparison-table-matrix {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.95rem;
+  min-width: 750px;
+}
+
+.comparison-table-matrix th,
+.comparison-table-matrix td {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid rgba(7, 36, 21, 0.06);
+}
+
+.comparison-table-matrix th {
+  background-color: var(--dark-green-color);
+  color: #fff;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 1.05rem;
+  border-bottom: 3px solid var(--gold-color);
+}
+
+.comparison-table-matrix td {
+  color: var(--text-dark-color);
+  vertical-align: middle;
+}
+
+.comparison-table-matrix tr:hover td {
+  background-color: hsl(34, 15%, 98%);
+}
+
+.comparison-table-matrix .feature-name {
+  font-weight: 700;
+  color: var(--dark-green-color);
+  background-color: hsl(34, 15%, 96%);
+  width: 220px;
+  position: sticky;
+  left: 0;
+  z-index: 10;
+}
+
+.col-vip, .val-vip,
+.col-reguler, .val-reguler,
+.col-hemat, .val-hemat {
+  text-align: center;
+}
+
+.val-vip {
+  background-color: rgba(197, 160, 89, 0.03);
+}
+
+.highlight-price {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--dark-green-color);
+}
+
+.val-vip.highlight-price {
+  color: var(--gold-color);
+}
+
+.action-row td {
+  padding-block: 1.5rem;
+  background-color: hsl(34, 15%, 97%);
+}
+
+.action-row td:first-child {
+  background-color: hsl(34, 15%, 96%);
+}
+
 /* Responsiveness Media Queries */
 
 @media (min-width: 768px) {

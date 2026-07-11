@@ -44,11 +44,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // --- 3. Package Filtering System ---
+  // --- 3. Package Filtering & Tabs System ---
   const filterButtons = document.querySelectorAll('.filter-btn');
   const packageCards = document.querySelectorAll('.package-card');
+  const compareTableView = document.getElementById('compare-table-view');
+  const individualCardsView = document.getElementById('individual-cards-view');
 
-  if (filterButtons.length > 0 && packageCards.length > 0) {
+  if (filterButtons.length > 0) {
     filterButtons.forEach(btn => {
       btn.addEventListener('click', () => {
         filterButtons.forEach(b => {
@@ -61,23 +63,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const targetCategory = btn.getAttribute('data-target');
 
-        packageCards.forEach(card => {
-          const category = card.getAttribute('data-category');
-          
-          if (targetCategory === 'all' || category === targetCategory) {
-            card.style.display = 'flex';
-            setTimeout(() => {
-              card.style.opacity = '1';
-              card.style.transform = 'translateY(0)';
-            }, 50);
-          } else {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(12px)';
-            setTimeout(() => {
-              card.style.display = 'none';
-            }, 300);
+        if (targetCategory === 'compare') {
+          // Show comparison table, hide individual cards grid
+          if (compareTableView) compareTableView.style.display = 'block';
+          if (individualCardsView) individualCardsView.style.display = 'none';
+        } else {
+          // Hide comparison table, show individual cards grid
+          if (compareTableView) compareTableView.style.display = 'none';
+          if (individualCardsView) {
+            individualCardsView.style.display = 'grid';
+            
+            // Filter which card is shown
+            packageCards.forEach(card => {
+              const category = card.getAttribute('data-category');
+              if (category === targetCategory) {
+                card.style.display = 'flex';
+                setTimeout(() => {
+                  card.style.opacity = '1';
+                  card.style.transform = 'translateY(0)';
+                }, 50);
+              } else {
+                card.style.display = 'none';
+                card.style.opacity = '0';
+              }
+            });
           }
-        });
+        }
       });
     });
   }
